@@ -27,7 +27,21 @@ class UserController extends Controller
 
     public function users(){
         // return UserResource::collection(User::all());
-        return User::with('contactinfo')->get();
+
+        return User::with('contactinfo')->get()->map(fn($user)=>[
+          'id'=>$user->id,
+          'fullname'=>$user->fullname,
+          'username'=>$user->username,
+          'email'=>$user->email,
+          'role'=>$user->getRoleNames()[0],
+          'permission'=>$user->getPermissionsViaRoles()->pluck('name'),
+          'created_at'=>$user->created_at->format('M d Y'),
+          'contact'=>$user->contactinfo
+      ]);
+      //   return response()->json([
+      //     'users' => UserResource::collection(User::all())
+      // ], 200);
+      //   return User::with('contactinfo')->get();
     }
 
     public function user($id){      

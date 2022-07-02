@@ -36,10 +36,11 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-
+         $user->assignRole('user');
         if ($user) {
 
             $user->api_token = $this->getApiToken($user);
+
         }
         return response()->json(['success' => 'Registration was success', 'user' => $user], 201);
 
@@ -64,11 +65,14 @@ class AuthController extends Controller
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
 
             $user = User::find(Auth::user()->id);
-
+            $role = $user->getRoleNames()[0];
+            // $permission = $user->getPermissionNames();
             $user->api_token = $this->getApiToken($user);
             return response()->json([
                 'message' => 'Login success',
                 'user' => $user,
+                "role"=>$role,
+                // "permissions"=>$permission
 
             ], 200);
         }else{

@@ -3,7 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-
+// use App\Http\Resources\ContactInformation;
 class UserResource extends JsonResource
 {
     /**
@@ -20,7 +20,8 @@ class UserResource extends JsonResource
             'username' => $this->username,
             'fullname' => $this->fullname,
             'email' => $this->email,
-            // 'password' => $this->password,
+            "role"=>$this->getRoleNames()[0],
+            "permissions"=>$this->getPermissionsViaRoles()->pluck('name'),
             'created_at' => $this->created_at->format('M d Y'),
             'updated_at' => $this->updated_at->format('M d Y'),
             
