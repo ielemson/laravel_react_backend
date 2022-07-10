@@ -17,7 +17,7 @@ class CreateTodosTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->text('todo');
-            $table->boolean('completed')->default(false);
+            $table->boolean('completed')->default(0);
             $table->enum('filter',['all','completed','uncompleted'])->default('all');
             $table->timestamps();
         });

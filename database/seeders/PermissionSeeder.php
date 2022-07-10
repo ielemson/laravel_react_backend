@@ -52,6 +52,7 @@ class PermissionSeeder extends Seeder
             'fullname'=> 'Elemson Ifeanyi',
             'username'=> 'ielemson',
             'email' => 'ielemson@gmail.com',
+            'active' =>1,
             'password' => Hash::make('secret123'),
             'email_verified_at' => now(),
         ]);

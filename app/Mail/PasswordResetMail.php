@@ -19,10 +19,10 @@ class PasswordResetMail extends Mailable
 
     public function build()
     {
-        $address = 'support@hash360.com';
+        $address = 'info@api.oxiltravel.com';
         $subject = 'Password Recovery';
         $name = 'Hash360 Inc.';
-        return $this->view('mail.resetpassword')
+        return $this->markdown('emails.auth.passwordreset')
         ->from($address, $name)
         ->subject($subject)
         ->with(['token' => $this->token]);
