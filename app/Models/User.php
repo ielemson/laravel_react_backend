@@ -25,6 +25,8 @@ class User extends Authenticatable
         // 'country',
         'email',
         'password',
+        'picture',
+        'active'
     ];
 
     /**

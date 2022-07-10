@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a7220913305b5f3f269ac76ada07654",
+    "content-hash": "eacf75700f973adafde24b4432720532",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -631,6 +631,59 @@
             "time": "2022-02-23T14:25:13+00:00"
         },
         {
+            "name": "geoip2/geoip2",
+            "version": "v0.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maxmind/GeoIP2-php.git",
+                "reference": "7fa971aef8e8a434d00aa23019e85594c635cb7e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maxmind/GeoIP2-php/zipball/7fa971aef8e8a434d00aa23019e85594c635cb7e",
+                "reference": "7fa971aef8e8a434d00aa23019e85594c635cb7e",
+                "shasum": ""
+            },
+            "require": {
+                "guzzle/guzzle": "3.*",
+                "maxmind-db/reader": "0.2.*",
+                "php": ">=5.3.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "GeoIp2": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1+"
+            ],
+            "authors": [
+                {
+                    "name": "Gregory J. Oschwald",
+                    "email": "goschwald@maxmind.com",
+                    "homepage": "http://www.maxmind.com/"
+                }
+            ],
+            "description": "MaxMind GeoIP2 PHP API",
+            "homepage": "https://github.com/maxmind/GeoIP2-php",
+            "keywords": [
+                "geoip",
+                "geolocation",
+                "maxmind"
+            ],
+            "support": {
+                "issues": "https://github.com/maxmind/GeoIP2-php/issues",
+                "source": "https://github.com/maxmind/GeoIP2-php/tree/v0.5.0"
+            },
+            "time": "2013-10-21T18:15:22+00:00"
+        },
+        {
             "name": "graham-campbell/result-type",
             "version": "v1.0.4",
             "source": {
@@ -691,6 +744,103 @@
                 }
             ],
             "time": "2021-11-21T21:41:47+00:00"
+        },
+        {
+            "name": "guzzle/guzzle",
+            "version": "v3.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "4de0618a01b34aa1c8c33a3f13f396dcd3882eba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/4de0618a01b34aa1c8c33a3f13f396dcd3882eba",
+                "reference": "4de0618a01b34aa1c8c33a3f13f396dcd3882eba",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.3",
+                "symfony/event-dispatcher": ">=2.1"
+            },
+            "replace": {
+                "guzzle/batch": "self.version",
+                "guzzle/cache": "self.version",
+                "guzzle/common": "self.version",
+                "guzzle/http": "self.version",
+                "guzzle/inflection": "self.version",
+                "guzzle/iterator": "self.version",
+                "guzzle/log": "self.version",
+                "guzzle/parser": "self.version",
+                "guzzle/plugin": "self.version",
+                "guzzle/plugin-async": "self.version",
+                "guzzle/plugin-backoff": "self.version",
+                "guzzle/plugin-cache": "self.version",
+                "guzzle/plugin-cookie": "self.version",
+                "guzzle/plugin-curlauth": "self.version",
+                "guzzle/plugin-error-response": "self.version",
+                "guzzle/plugin-history": "self.version",
+                "guzzle/plugin-log": "self.version",
+                "guzzle/plugin-md5": "self.version",
+                "guzzle/plugin-mock": "self.version",
+                "guzzle/plugin-oauth": "self.version",
+                "guzzle/service": "self.version",
+                "guzzle/stream": "self.version"
+            },
+            "require-dev": {
+                "doctrine/cache": "*",
+                "monolog/monolog": "1.*",
+                "phpunit/phpunit": "3.7.*",
+                "psr/log": "1.0.*",
+                "symfony/class-loader": "*",
+                "zendframework/zend-cache": "<2.3",
+                "zendframework/zend-log": "<2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Guzzle": "src/",
+                    "Guzzle\\Tests": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Guzzle Community",
+                    "homepage": "https://github.com/guzzle/guzzle/contributors"
+                }
+            ],
+            "description": "Guzzle is a PHP HTTP client library and framework for building RESTful web service clients",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
+            ],
+            "support": {
+                "issues": "https://github.com/guzzle/guzzle/issues",
+                "source": "https://github.com/guzzle/guzzle/tree/master"
+            },
+            "abandoned": "guzzlehttp/guzzle",
+            "time": "2014-01-28T22:29:15+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1014,6 +1164,102 @@
                 }
             ],
             "time": "2022-06-20T21:43:11+00:00"
+        },
+        {
+            "name": "jalle19/php-whitelist-check",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Jalle19/php-whitelist-check.git",
+                "reference": "f7ff9fa3e918c04f8a9130c6358d0d7193df7655"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Jalle19/php-whitelist-check/zipball/f7ff9fa3e918c04f8a9130c6358d0d7193df7655",
+                "reference": "f7ff9fa3e918c04f8a9130c6358d0d7193df7655",
+                "shasum": ""
+            },
+            "require": {
+                "jycr753/ip-utils": "^2.0.1",
+                "php": ">=5.5.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Whitelist\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "description": "Provides a simple way to check whether an address or domain is on a whitelist",
+            "homepage": "https://github.com/Jalle19/php-whitelist-check",
+            "keywords": [
+                "cidr",
+                "ipv4",
+                "ipv6",
+                "whitelist"
+            ],
+            "support": {
+                "issues": "https://github.com/Jalle19/php-whitelist-check/issues",
+                "source": "https://github.com/Jalle19/php-whitelist-check/tree/master"
+            },
+            "time": "2022-02-13T13:50:18+00:00"
+        },
+        {
+            "name": "jycr753/ip-utils",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jycr753/ip-utils.git",
+                "reference": "6e8ab3e3bc3c2b816bfc682197edc8239ca08857"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jycr753/ip-utils/zipball/6e8ab3e3bc3c2b816bfc682197edc8239ca08857",
+                "reference": "6e8ab3e3bc3c2b816bfc682197edc8239ca08857",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7.26"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "IpUtils\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christoph Mewes",
+                    "homepage": "http://www.xrstf.de/"
+                }
+            ],
+            "description": "small library to deal with IPv4 & IPv6 addresses and subnets",
+            "keywords": [
+                "IP",
+                "ipv4",
+                "ipv6",
+                "matching",
+                "subnet"
+            ],
+            "support": {
+                "issues": "https://github.com/jycr753/ip-utils/issues",
+                "source": "https://github.com/jycr753/ip-utils/tree/2.0.1"
+            },
+            "time": "2020-10-06T21:55:44+00:00"
         },
         {
             "name": "laravel/framework",
@@ -1717,6 +1963,55 @@
                 }
             ],
             "time": "2022-04-17T13:12:02+00:00"
+        },
+        {
+            "name": "maxmind-db/reader",
+            "version": "v0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maxmind/MaxMind-DB-Reader-php.git",
+                "reference": "ea74a36002564ccfa16ab2712739c6b9aec1b4a0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maxmind/MaxMind-DB-Reader-php/zipball/ea74a36002564ccfa16ab2712739c6b9aec1b4a0",
+                "reference": "ea74a36002564ccfa16ab2712739c6b9aec1b4a0",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "MaxMind": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1+"
+            ],
+            "authors": [
+                {
+                    "name": "Gregory J. Oschwald",
+                    "email": "goschwald@maxmind.com",
+                    "homepage": "http://www.maxmind.com/"
+                }
+            ],
+            "description": "MaxMind DB Reader API",
+            "homepage": "https://github.com/maxmind/MaxMind-DB-Reader-php",
+            "keywords": [
+                "database",
+                "geoip",
+                "geolocation",
+                "maxmind"
+            ],
+            "support": {
+                "issues": "https://github.com/maxmind/MaxMind-DB-Reader-php/issues",
+                "source": "https://github.com/maxmind/MaxMind-DB-Reader-php/tree/master"
+            },
+            "time": "2013-10-21T17:38:10+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -5536,6 +5831,70 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.11.0"
             },
             "time": "2022-06-03T18:03:27+00:00"
+        },
+        {
+            "name": "weboap/visitor",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/weboAp/Visitor.git",
+                "reference": "686f64169c45fcf457703c4f108b8a63e5164d8c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/weboAp/Visitor/zipball/686f64169c45fcf457703c4f108b8a63e5164d8c",
+                "reference": "686f64169c45fcf457703c4f108b8a63e5164d8c",
+                "shasum": ""
+            },
+            "require": {
+                "geoip2/geoip2": "0.5.*",
+                "jalle19/php-whitelist-check": "dev-master",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "illuminate/support": "4.1.*",
+                "mockery/mockery": "dev-master",
+                "way/laravel-test-helpers": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Weboap\\Visitor\\": "src/Package/Visitor",
+                    "Weboap\\Visitor\\Geo\\": "src/Package/Geo",
+                    "Weboap\\Visitor\\Tests\\": "tests",
+                    "Weboap\\Visitor\\Models\\": "src/Package/Models",
+                    "Weboap\\Visitor\\Facades\\": "src/Package/Facades",
+                    "Weboap\\Visitor\\Seeders\\": "src/seeders",
+                    "Weboap\\Visitor\\Storage\\": "src/Package/Storage",
+                    "Weboap\\Visitor\\Services\\": "src/Package/Services",
+                    "Weboap\\Visitor\\Validation\\": "src/Package/Validation"
+                },
+                "classmap": [
+                    "src/migrations"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "weboap",
+                    "email": "weboap@gmail.com"
+                }
+            ],
+            "description": "log your visitors in db, page hits, and generate visit counter for Laravel 4",
+            "keywords": [
+                "clicks",
+                "counter",
+                "framework",
+                "hits",
+                "laravel",
+                "log",
+                "visitors"
+            ],
+            "support": {
+                "issues": "https://github.com/weboAp/Visitor/issues",
+                "source": "https://github.com/weboAp/Visitor/tree/master"
+            },
+            "time": "2014-07-25T05:49:31+00:00"
         }
     ],
     "packages-dev": [

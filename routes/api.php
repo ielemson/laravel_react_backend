@@ -5,6 +5,7 @@ use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\PasswordResetController;
 use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\UserController;
+use App\Http\Controllers\API\TodoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,7 +31,7 @@ Route::resource('products', ProductController::class);
 
 Route::group(['namespace' => 'API'], function() {
     // User Create Route
-    Route::post('register',[AuthController::class,'create_user']);
+    Route::post('register',[AuthController::class,'store']);
     Route::post('login',[AuthController::class,'login']);
 
     // Password Reset Routes
@@ -38,29 +39,45 @@ Route::group(['namespace' => 'API'], function() {
     Route::get('confirm-reset-token/{token}',[PasswordResetController::class,'confirm_reset_token']);
     Route::post('update-password',[PasswordResetController::class,'update_password']);
     // check user loggin status
-    Route::get('check',[UserController::class,'check']);
+    Route::get('check_token/{token?}',[UserController::class,'check_token']);
+
+
 
 });
 
 
 Route::middleware(['auth:sanctum'])->group(function () {
 
-    Route::get('test',function(){
+    // Route::get('test',function(){
 
-        return response()->json([
-            'message'=> "Welcome Hash360 API",
-            'Laravel Version'=>app()->version()
-        ]);
-    });
+    //     return response()->json([
+    //         'message'=> "Welcome Hash360 API",
+    //         'Laravel Version'=>app()->version()
+    //     ]);
+    // });
 
     Route::group(['namespace' => 'API'], function() {
         Route::get('user',[UserController::class,'index']);
+       
+        Route::get('user/current',[UserController::class,'curUser']);
         Route::get('user/{id}',[UserController::class,'user']);
         Route::get('users',[UserController::class,'users']);
         Route::post('user/update/{id}',[UserController::class,'update_user']);
         Route::post('user/update',[UserController::class,'update']);
         Route::post('user/upload_img',[UserController::class,'upload_img']);
- 
+        Route::post('user/destroy',[UserController::class,'destroy']);
+        Route::post('user/store',[UserController::class,'store']);
+
+        // Todo Resource controller
+        Route::get('todos',[TodoController::class,'index']);
+        Route::get('todos/all',[TodoController::class,'all_todos']);
+        Route::post('todo/store',[TodoController::class,'store']);
+        Route::post('todo/update',[TodoController::class,'update']);
+        // Route::post('todo/filter/{status?}',[TodoController::class,'filter']);
+        Route::get('todo/complete/{id}',[TodoController::class,'complete']);
+        Route::get('todo/undo/{id}',[TodoController::class,'undo']);
+        Route::get('todo/destroy/{id}',[TodoController::class,'destroy']);  
+        Route::get('check/{token}',[UserController::class,'check']);
     });
 
     Route::get('logout',[AuthController::class,'logout']);
