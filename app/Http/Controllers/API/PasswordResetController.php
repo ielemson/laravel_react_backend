@@ -63,7 +63,7 @@ class PasswordResetController extends Controller
             if($token_check_status->created_at->addMinutes(30)->isPast()){
 
                 return response()->json([
-                    'token_status' => 'expired',
+                    'token_status' => false,
                 ], 200);
 
             }

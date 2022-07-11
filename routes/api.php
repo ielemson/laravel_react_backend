@@ -6,6 +6,7 @@ use App\Http\Controllers\API\PasswordResetController;
 use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\API\TodoController;
+use App\Http\Controllers\API\VisitorsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,6 +41,8 @@ Route::group(['namespace' => 'API'], function() {
     Route::post('update-password',[PasswordResetController::class,'update_password']);
     // check user loggin status
     Route::get('check_token/{token?}',[UserController::class,'check_token']);
+    Route::post('store_location',[VisitorsController::class,'store']);
+    Route::get('visitors',[VisitorsController::class,'index']);
 
 
 
